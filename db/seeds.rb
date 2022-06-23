@@ -98,7 +98,7 @@ Event.create!([
   }
 ])
 
-events = [
+[
   ["BugSmash", "bugsmash.png"],
   ["Hackathon", "hackathon.png"],
   ["Kata Camp", "katacamp.png"],
@@ -108,9 +108,7 @@ events = [
   ["5-Minute Lightning Talks", "lightning.png"],
   ["Drone Zone", "drone-zone.png"],
   ["Coding Ninjas", "ninjas.png"]
-]
-
-events.each do |name, filename| 
+].each do |name, filename| 
   event = Event.find_by!(name: name)
   file = File.open(Rails.root.join("app/assets/images/#{filename}"))
  event.main_image.attach(io: file, filename: filename)

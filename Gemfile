@@ -29,7 +29,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 
 # Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.2'
+gem 'aws-s3-sk', require: false
 gem 'bootstrap', '~> 4.3.1'
 
 # Reduces boot times through caching; required in config/boot.rb

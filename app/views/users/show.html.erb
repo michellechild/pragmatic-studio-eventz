@@ -13,7 +13,8 @@
     <% @registrations.each do |r| %>
     <div class="registration">
       <div class="image">
-        <%= link_to image_tag(r.event.image_file_name), r.event %>
+      <%= main_image (r.event) %>
+        
       </div>
       <div class="name">
         <%= link_to r.event.name, r.event %>
@@ -28,7 +29,7 @@
 		<h4>Liked Events </h4>
 		<div class="liked-events">
 			<% @liked_events.each do |event| %>
-		  <%= link_to image_tag(event.image_file_name), event %>
+      <%= main_image (event) %>
 			<% end %>
 		</div>
 	<% end %>

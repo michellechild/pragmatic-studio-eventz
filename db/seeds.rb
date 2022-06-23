@@ -97,3 +97,23 @@ Event.create!([
     }.squish
   }
 ])
+
+events = [
+  ["BugSmash", "bugsmash.png"],
+  ["Hackathon", "hackathon.png"],
+  ["Kata Camp", "katacamp.png"],
+  ["Coffee 'n Code", "coffee-code.png"],
+  ["Rails User Group", "rails-user-group.png"],
+  ["Ruby User Group", "ruby-user-group.png"],
+  ["5-Minute Lightning Talks", "lightning.png"],
+  ["Drone Zone", "drone-zone.png"],
+  ["Coding Ninjas", "ninjas.png"]
+]
+
+events.each do |name, filename| 
+  event = Event.find_by!(name: name)
+  file = File.open(Rails.root.join("app/assets/images/#{filename}"))
+ event.main_image.attach(io: file, filename: filename)
+end
+
+# u = User.create!(name: "Michelle Child", admin: true, email: "mlchild4@gmail.com", password: "password10", password_confirmation: "password10"
